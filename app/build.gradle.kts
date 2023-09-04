@@ -53,7 +53,14 @@ for (version in 17..19) {
         mainModule.set("JavaFeatures")
         mainClass.set("com.icuxika.$parentPackage.App$version")
         jvmArgs =
-            listOf("-XX:+PrintCommandLineFlags", ENABLE_PREVIEW, "--add-exports=java.base/jdk.internal.vm=JavaFeatures")
+            listOf(
+                "-Dsun.stdout.encoding=UTF-8",
+                "-XX:+PrintCommandLineFlags",
+                ENABLE_PREVIEW,
+                "--add-exports=java.base/jdk.internal.vm=JavaFeatures",
+                "--enable-native-access=JavaFeatures",
+                "-Djava.library.path=C:\\CommandLineTools\\ffmpeg-6.0-full_build-shared\\bin"
+            )
     }
 }
 
