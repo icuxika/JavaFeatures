@@ -41,11 +41,12 @@ tasks.withType<Test> {
     jvmArgs = listOf(ENABLE_PREVIEW)
 }
 
-for (version in 17..19) {
+for (version in 17..20) {
     val parentPackage = when (version) {
         17 -> "seventeen"
         18 -> "eighteen"
         19 -> "nineteen"
+        20 -> "twenty"
         else -> ""
     }
     task<JavaExec>("runApp$version") {
